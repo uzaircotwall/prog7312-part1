@@ -1,0 +1,44 @@
+﻿<Window x:Class="DeweyDecimalTrainingApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DeweyDecimalTrainingApp"
+        mc:Ignorable="d"
+      Title="Dewey Decimal Training" Height="400" Width="600" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <StackPanel x:Name="HomeStackPanel" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Visible">
+            <TextBlock Text="Dewey Decimal Classification System Training" FontSize="20" Margin="0,0,0,20"/>
+            <Button Content="Replacing Books Task" Click="StartReplacingBooksTask_Click" Width="200" Height="40"/>
+            <Button Content="Identifying areas (Not Implemented)" IsEnabled="False" Width="200" Height="40" Margin="0,10,0,0"/>
+            <Button Content="Finding Call Numbers (Not Implemented)" IsEnabled="False" Width="200" Height="40" Margin="0,10,0,0"/>
+        </StackPanel>
+
+        <StackPanel x:Name="RBTStackPanel" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Hidden" Height="364" Width="580">
+            <Grid Height="363">
+                <!-- TextBox to display the current call number -->
+                <TextBox x:Name="CallNumberTextBox" Width="275" 
+                 IsReadOnly="True" Margin="10,10,302,57" BorderThickness="1,1,1,1"/>
+
+                <!-- TextBox to display the User order -->
+                <TextBox x:Name="UserOrderTextBox" Width="275"
+                 TextWrapping="Wrap" AcceptsReturn="True" HorizontalAlignment="Right" Margin="0,10,0,57"/>
+
+
+
+                <!-- Add a Button to check the order and calculate points -->
+                <Button Content="Check Order" x:Name="CheckOrder" Click="CheckOrderButton_Click"  FontSize="20" Width="200" Height="40" Margin="0,300,0,0"/>
+
+                <!-- Add a Label to display user points -->
+                <Label x:Name="PointsLabel" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,325,10,0" FontSize="16"/>
+
+                <!-- Add a Button to return back to home screen -->
+                <Button Content="←" x:Name="Return"  FontSize="20" Height="40" Margin="0,310,536,13" Width="40" Click="Return_Click"/>
+
+                <!-- Add a Button to refresh and display new call numbers -->
+                <Button Content="↻" x:Name="Refresh"  FontSize="20" Height="40" Margin="402,310,138,13" Width="40" Click="Refresh_Click"/>
+
+            </Grid>
+        </StackPanel>
+    </Grid>
+</Window>
